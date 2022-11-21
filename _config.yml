@@ -24,7 +24,7 @@ location: Seattle
 description: >- # this means to ignore newlines until "baseurl:"
   Everything is an experiment.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://troy.yort.com/" # the base hostname & protocol for your site, e.g. http://example.com
 
 theme: hitchens-theme
 plugins:
