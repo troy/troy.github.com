@@ -1,0 +1,31 @@
+{% comment %} Troy: checked include.menu {% endcomment %}
+{% assign menu = include.menu %}
+{% unless menu %}
+{% assign menu = site.data.menu %}
+{% endunless %}
+
+{% if menu %}
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="{{ '/' | prepend: site.baseurl }}">
+          Home
+        </a>
+      </li>
+    {% comment %} Troy: used menu instead of hardcoding site.data.menu here {% endcomment %}
+    {% for item in menu %}
+      <li {% if page.url == item.url %}class="active"{% endif %}>
+        {% if item.url contains 'http' %}
+          <a href="{{ item.url }}">
+            {{ item.title }}
+          </a>
+        {% else %}
+          <a href="{{ item.url | prepend: site.baseurl }}">
+            {{ item.title }}
+          </a>
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  </nav>
+{% endif %}

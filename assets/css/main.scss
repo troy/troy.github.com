@@ -1,0 +1,98 @@
+---
+---
+
+@charset "utf-8";
+
+$asset_url: '{{ '/assets' | absolute_url }}';
+
+@import 
+  "reset",
+  "variables",
+  "syntax-highlighting",
+  "mixins",
+  "font",
+  "base",
+  "masthead",
+  "menu",
+  "post-list",
+  "article",
+  "footnotes",
+  "search"
+;
+
+body {
+  background: #5e5c05;
+  background: #268bd2;
+// #268bd2 blue (white text)
+// #73797e gray (white)
+// #888005 mustard yellow (white)
+// #5e5c05 camo green/yellow (white)
+}
+
+.home {
+  max-width: 36em;
+  color: white;
+}
+
+.home h1 {
+  font-size: 1.35em;
+}
+.home h1.content-title {
+  margin-top: initial;
+  margin-bottom: initial;
+  letter-spacing: 0.05em;
+  color: #ddd;
+  font-variant: all-small-caps;
+}
+.home h1.divided::after {
+  background: none;
+  height: initial;
+  width: initial;
+  display: initial;
+}
+.home .post-list h1 {
+  color: white;
+}
+.home .post-list .post-link__heading {
+  margin-right: 2em;
+  //font-family: 'PT Sans', sans-serif;
+  //font-size: 0.8em;
+}
+.home .post-list .post-date {
+  color: #ddd;
+  margin-top: 0.35em;
+  text-transform: initial;
+}
+
+.post p {
+  margin-top: 22px;
+  text-indent: initial;
+  line-height: initial;
+  text-align: initial;
+}
+.post .post-content {
+  font-family: 'PT Sans', sans-serif;
+}
+.post h1 {
+  padding-top: 1em;
+}
+.post > * {
+  max-width: 49rem;
+}
+
+.site-navigation a {
+  color: white;
+  //font-family: 'PT Sans', sans-serif;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-variant: none;
+  letter-spacing: 0.06em;
+  padding-bottom: 1em;
+}
+.site-masthead h1 {
+  color: white;
+  margin-top: 0.5em;
+}
+.site-masthead h2 {
+  color: white;
+}
