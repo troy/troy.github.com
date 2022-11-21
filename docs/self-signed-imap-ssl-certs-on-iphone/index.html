@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Troy Davis &mdash; Self-signed IMAP certs on iPhone</title>
+
+    <meta name="description" content="Everything is an experiment.">  
+
+    <link rel="stylesheet" href="/assets/css/main.css?1669056688359197000">
+
+    <link rel="apple-touch-icon" href="">    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="/images/favicon.png" rel="icon">
+
+    <link type="application/atom+xml" rel="alternate" href="/feed" title="Troy Davis" />
+</head>
+  <body>
+
+    
+    
+
+    
+  
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting" id="main" role="article" aria-label="Content">
+
+  
+    <h1 class="post-title divided p-name" itemprop="name headline">
+      Self-signed IMAP certs on iPhone
+    </h1>
+  
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I’m sure somewhere on the planet, there’s a second person with an iPhone who doesn’t use GMail, and perhaps that person uses their own self-signed SSL certificate for IMAPS.</p>
+
+<p>When adding a new Account, iPhone iOS 3 setup will pop up a dialog to confirm the shady self-signed certificate. Even with that acknowledged, it will try to connect and eventually time out. The warning doesn’t mention (nor prompt to install) the root certificate, which will make the cogs turn.</p>
+
+<p>Put the CA root cert on any Web server (.crt extension and application/x-x509-ca-cert MIME type), then hit the URL in Safari from the phone.</p>
+
+<p>You’ll see an Install Profile dialog like in the <a href="http://support.apple.com/manuals/en_US/Enterprise_Deployment_Guide.pdf">Enterprise Deployment Guide</a>:</p>
+
+<p><img src="http://images.yort.com/blog/self-signed-imap-ssl-1.jpg" alt="Screenshot of iOS Install Profile dialog" /></p>
+
+<p>No need for the Configuration Utility or Enterprise kit. The deployment guide says you can also attach the cert to an email, then open that message on the phone. Apple, clicking through the IMAP cert alert should make that cert trusted, or at least warn why it won’t work until the root cert is added (and how).</p>
+
+<p>Update: I’m no longer the last person on the planet not using GMail.</p>
+
+  </div>
+
+  <div class="post-meta">
+    
+    <time class="post-date dt-published" datetime="2008-08-13T00:00:00-07:00" itemprop="datePublished">August 13, 2008</time>
+  </div>
+
+  
+
+</article>
+
+
+    
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://seattleapproves.org/">
+            Seattle Approves
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://simpleoptout.com/">
+            Simple Opt Out
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://tacoapp.com/">
+            Taco
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="http://sawsafely.org/">
+            Saw Safely
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+    
+
+  </body>
+</html>

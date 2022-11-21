@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Troy Davis &mdash; 2 common problems with OAuth client libraries</title>
+
+    <meta name="description" content="Everything is an experiment.">  
+
+    <link rel="stylesheet" href="/assets/css/main.css?1669056688359197000">
+
+    <link rel="apple-touch-icon" href="">    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="/images/favicon.png" rel="icon">
+
+    <link type="application/atom+xml" rel="alternate" href="/feed" title="Troy Davis" />
+</head>
+  <body>
+
+    
+    
+
+    
+  
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting" id="main" role="article" aria-label="Content">
+
+  
+    <h1 class="post-title divided p-name" itemprop="name headline">
+      2 common problems with OAuth client libraries
+    </h1>
+  
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I posted a long <a href="http://groups.google.com/group/fusion-tables-users-group/msg/535854503fa21868">explanation</a> to the fusion-tables-users group about using third-party libraries with Fusion Tables over OAuth. It might also help folks debugging OAuth problems or adding OAuth support to existing libraries. Full text below.</p>
+
+<hr />
+
+<p>Just an update for the archives and anyone else debugging this. I went through the <a href="http://code.google.com/p/fusion-tables-client-python/source/browse/trunk/src/samples/oauth_example.py?r=16">Python example</a> and it does work for POST requests in the body. I tested CREATE and INSERT.</p>
+
+<p>Here are the 2 things that were tripping up the Ruby GData library coupled with someone’s monkeypatched OAuth auth_handler (<code class="language-plaintext highlighter-rouge">GData::Auth::OAuth</code>). They basically boil down to not being designed for, or frequently used with, POST requests. From skimming other libraries, these problems are endemic to lesser-used OAuth libraries.</p>
+
+<p>Here goes:</p>
+
+<ol>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">GData::Auth::OAuth</code> only pulled out GET params from the URL, not POST params in the request body. POST params need to be sorted alongside the OAuth parameters when creating the signature base, so this immediately made my signatures invalid.</p>
+
+    <p>I saw a couple causes for this in other libraries:</p>
+
+    <ul>
+      <li>designing for GET and then exposing a convenience POST method as an afterthought (without looking at the body params)</li>
+      <li>one person wrote the HTTP client, another wrote the OAuth signer, and a third wrote the Fusion Tables library or GData extension, and a corner case got missed (or callers can sign requests before a body is even defined)</li>
+    </ul>
+  </li>
+  <li>
+    <p>Most language built-in URI encoders are designed for <a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1">x-www-form-urlencoded</a>, with spaces as plus characters. OAuth wants everything UTF-8, ie <code class="language-plaintext highlighter-rouge">U+0020</code> or <code class="language-plaintext highlighter-rouge">%20</code> for space. The confusing part for Fusion Tables is that this works in GET requests: [select+<em>+from+317391+limit+1](“https://www.google.com/fusiontables/api/query?sql=select+</em>+from+317391+limit+1”)</p>
+
+    <p>.. but that space encoding won’t work in OAuth signature hashes (and thus not the request body itself), and will show up as 401 Unauthorized rather than an app error. If you’re adapting an existing Fusion Tables library to work with OAuth, this is something to consider.</p>
+  </li>
+</ol>
+
+<p>Finally, if it helps anyone, here’s a signature base string for a CREATE statement (private values replaced), for the table schema in the Python example code:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>POST&amp;http%3A%2F%2Fwww.google.com%2Ffusiontables%2Fapi 
+%2Fquery&amp;oauth_consumer_key%3Ddomain.com%26oauth_nonce 
+%3D75556368%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp 
+%3D1305155510%26oauth_token 
+%3D1%252F98y2rqyfdfhuaiheworh327rahyADYSAIYuioydadio%26oauth_version 
+%3D1.0%26sql%3DCREATE%2520TABLE%2520%2527data.csv 
+%2527%2520%2528%2527col2%2527%253A%2520STRING%252C%2527col3%2527%253A 
+%2520STRING%252C%2527col1%2527%253A%2520STRING%2529
+</code></pre></div></div>
+
+<p>that signature string is for the param:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sql=CREATE+TABLE+%27data.csv%27+%28%27col2%27%3A+STRING%2C%27col3%27%3A+STRING%2C%27col1%27%3A+STRING%29
+</code></pre></div></div>
+
+<p>I’ve tested OAuth POST requests sent as the HTTP Authorization header as well as in the body of the POST, and both work.</p>
+
+  </div>
+
+  <div class="post-meta">
+    
+    <time class="post-date dt-published" datetime="2011-06-12T00:00:00-07:00" itemprop="datePublished">June 12, 2011</time>
+  </div>
+
+  
+
+</article>
+
+
+    
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://seattleapproves.org/">
+            Seattle Approves
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://simpleoptout.com/">
+            Simple Opt Out
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://tacoapp.com/">
+            Taco
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="http://sawsafely.org/">
+            Saw Safely
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+    
+
+  </body>
+</html>

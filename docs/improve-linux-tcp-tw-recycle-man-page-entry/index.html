@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Troy Davis &mdash; Improve Linux tcp_tw_recycle man page entry</title>
+
+    <meta name="description" content="Everything is an experiment.">  
+
+    <link rel="stylesheet" href="/assets/css/main.css?1669056688359197000">
+
+    <link rel="apple-touch-icon" href="">    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="/images/favicon.png" rel="icon">
+
+    <link type="application/atom+xml" rel="alternate" href="/feed" title="Troy Davis" />
+</head>
+  <body>
+
+    
+    
+
+    
+  
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting" id="main" role="article" aria-label="Content">
+
+  
+    <h1 class="post-title divided p-name" itemprop="name headline">
+      Improve Linux tcp_tw_recycle man page entry
+    </h1>
+  
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>We recently identified the cause of a problem affecting one of
+<a href="https://papertrailapp.com">Papertrail’s</a> service providers. Their hosts 
+occasionally could not establish TCP connections with a seemingly-random 
+small set of Internet hosts.</p>
+
+<p>Troubleshooting was difficult because:</p>
+
+<ul>
+  <li>
+    <p>The affected hosts changed. One host would oscillate between being able to establish a connection for a 
+few hours (or days) and not, seemingly with no pattern.</p>
+  </li>
+  <li>I didn’t have direct access to the service provider’s hosts or the end 
+users’ hosts. This made reproducing the problem in a controlled environment 
+basically impossible. “Paste the output of..” and “Run this packet capture..”
+was what I had to work with.</li>
+  <li>I couldn’t draw conclusions from the end users who reported the problem.
+Fewer than 5 users reported problems and they were biased towards inquisitive 
+people (who investigated or reported the first occurrence) or those who 
+experienced the problem multiple times. Presumably, some end users couldn’t 
+connect once and just tried again later.</li>
+</ul>
+
+<p>Among this tiny pool, there was one common theme: the remote hosts traversed 
+NAT. My investigation eventually led to <code class="language-plaintext highlighter-rouge">tcp_tw_recycle</code>, a Linux <code class="language-plaintext highlighter-rouge">sysctl</code> flag 
+with <a href="https://www.google.com/search?q=tcp_tw_recycle">far more Google results</a> 
+than it deserves. Here’s why.</p>
+
+<h3 id="linux-tcp-header-verification">Linux TCP header verification</h3>
+
+<p>Modern Linux kernels verify that TCP header values meet certain requirements. 
+These include “Protect Against Wrapped Sequence numbers” or PAWS, defined in 
+<a href="https://www.ietf.org/rfc/rfc1323.txt">RFC 1323</a>, and 
+<a href="https://tools.ietf.org/html/rfc6191">RFC 6191</a> “Reducing the TIME-WAIT State 
+Using TCP Timestamps.”</p>
+
+<p>With <code class="language-plaintext highlighter-rouge">tcp_tw_recycle</code> enabled, a connection’s TCP header timestamp value is 
+retained in cases where it otherwise would not have been kept. From 
+<a href="https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/tree/net/ipv4/tcp_ipv4.c?h=linux-2.6.32.y#n200">tcp_ipv4.c</a>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (tcp_death_row.sysctl_tw_recycle &amp;&amp;
+    !tp-&gt;rx_opt.ts_recent_stamp &amp;&amp; rt-&gt;rt_dst == daddr) {
+        struct inet_peer *peer = rt_get_peer(rt);
+        /*
+         * VJ's idea. We save last timestamp seen from
+         * the destination in peer table, when entering state
+         * TIME-WAIT * and initialize rx_opt.ts_recent from it,
+         * when trying new connection.
+         */
+        if (peer != NULL &amp;&amp;
+            peer-&gt;tcp_ts_stamp + TCP_PAWS_MSL &gt;= get_seconds()) {
+                tp-&gt;rx_opt.ts_recent_stamp = peer-&gt;tcp_ts_stamp;
+                tp-&gt;rx_opt.ts_recent = peer-&gt;tcp_ts;
+        }
+}
+</code></pre></div></div>
+
+<p>The problem: the TCP timestamp is only tracked on a per-remote-IP basis, yet
+some NAT devices don’t rewrite TCP timestamps in the translation process.
+As a result, the Internet-facing IP of a NAT device may transmit valid packets 
+with unrelated timestamps.</p>
+
+<p>The problem we saw manifests when more than one remote host (for example, two 
+employees on an office network) try to connect to this Linux host within a few
+minutes of one another. The first connection will succeed, but the
+second connection attempt (from the same public NAT IP) will fail. The
+kernel considers its timestamp invalid.</p>
+
+<p>In another function, a comment hints at the difference between tracking 
+timestamps on a per-host basis and doing so on a per-port-pair basis. From 
+<a href="https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/tree/net/ipv4/tcp_ipv4.c?h=linux-2.6.32.y#n112">tcp_ipv4.c</a>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* With PAWS, it is safe from the viewpoint
+   of data integrity. Even without PAWS it is safe provided sequence
+   spaces do not overlap i.e. at data rates &lt;= 80Mbit/sec.
+
+   Actually, the idea is close to VJ's one, only timestamp cache is
+   held not per host, but per port pair and TW bucket is used as state
+   holder.
+
+   If TW bucket has been already destroyed we fall back to VJ's scheme
+   and use initial timestamp retrieved from peer table.
+</code></pre></div></div>
+
+<p>Note: I haven’t read anywhere near all of Linux’s TCP header source. If you 
+find an error in this post, let me know.</p>
+
+<h3 id="root-cause">Root cause</h3>
+
+<p>Although that’s the problem, the root cause is poor documentation. The two
+places that a systems administrator is most likely to consult are 
+the kernel <a href="https://git.kernel.org/cgit/linux/kernel/git/stable/linux-stable.git/tree/Documentation/networking/ip-sysctl.txt?h=linux-2.6.32.y#n438">IP sysctl docs</a>, which suggests consulting “technical experts”:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tcp_tw_recycle - BOOLEAN
+        Enable fast recycling TIME-WAIT sockets. Default value is 0.
+        It should not be changed without advice/request of technical
+        experts.
+</code></pre></div></div>
+
+<p>.. and the <a href="http://man7.org/linux/man-pages/man7/tcp.7.html">tcp.7 man page</a>, which says:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tcp_tw_recycle (Boolean; default: disabled; since Linux 2.4)
+        Enable fast recycling of TIME_WAIT sockets.  Enabling this
+        option is not recommended since this causes problems when
+        working with NAT (Network Address Translation).
+</code></pre></div></div>
+
+<p>Neither of these explain what the option changes or how it interacts with
+NAT. I’ve submitted <a href="http://marc.info/?l=linux-man&amp;m=141676013318902&amp;w=2">a patch</a>
+for the man page. The changed copy warns of the possible impact and says 
+where to learn more.</p>
+
+<blockquote>
+  <p>Enable fast recycling of TIME_WAIT sockets. Enabling this option is
+not recommended for devices communicating with the general Internet
+or using NAT (Network Address Translation). Since some NAT gateways
+pass through IP timestamp values, one IP can appear to have
+non-increasing timestamps. See RFC 1323 (PAWS), RFC 6191.</p>
+</blockquote>
+
+<p>There’s also a 2013 <a href="https://tools.ietf.org/html/draft-penno-behave-rfc4787-5382-5508-bis-04#section-3.1.2">BCP</a>
+(“Network Address Translation Behavioral Requirements Updates”)
+which informs future NAT implementors of this consideration.</p>
+
+  </div>
+
+  <div class="post-meta">
+    
+    <time class="post-date dt-published" datetime="2014-11-23T09:01:38-08:00" itemprop="datePublished">November 23, 2014</time>
+  </div>
+
+  
+
+</article>
+
+
+    
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://seattleapproves.org/">
+            Seattle Approves
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://simpleoptout.com/">
+            Simple Opt Out
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://tacoapp.com/">
+            Taco
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="http://sawsafely.org/">
+            Saw Safely
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+    
+
+  </body>
+</html>

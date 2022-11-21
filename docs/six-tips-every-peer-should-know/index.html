@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Troy Davis &mdash; Six tips every peer should know</title>
+
+    <meta name="description" content="Everything is an experiment.">  
+
+    <link rel="stylesheet" href="/assets/css/main.css?1669056688359197000">
+
+    <link rel="apple-touch-icon" href="">    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="/images/favicon.png" rel="icon">
+
+    <link type="application/atom+xml" rel="alternate" href="/feed" title="Troy Davis" />
+</head>
+  <body>
+
+    
+    
+
+    
+  
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting" id="main" role="article" aria-label="Content">
+
+  
+    <h1 class="post-title divided p-name" itemprop="name headline">
+      Six tips every peer should know
+    </h1>
+  
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>A gaggle of Seattle network operators converged in one room last week, for the annual Seattle Internet Exchange (SIX) members meeting. As a janitor and board director, I was already preparing a handout, so I used the back side for six SIX tips.</p>
+
+<h4 id="how-tcp-sliding-windows-and-the-bandwidthdelay-product-works">How TCP sliding windows and the bandwidth*delay product works</h4>
+
+<p>Given the desired throughput of a TCP connection and its round-trip time, the <a href="http://en.wikipedia.org/wiki/Bandwidth-delay_product">bandwidth*delay product</a> is the minimum <a href="http://www.rhyshaden.com/tcp.htm">TCP window size</a> that each endpoint (host) must support in order to transfer at that throughput. Trying to saturate a 100 Mbps cross-country MPLS VPN with a single HTTP transfer?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>BDP = bandwidth * RTT
+
+100 Mb/sec * 70 ms = 12,500,000 bytes/sec * 0.070 sec = 875,000 bytes
+</code></pre></div></div>
+
+<p>Each endpoint’s OS TCP window size must be at least 875 KB, or it will be the bottleneck.</p>
+
+<h4 id="enlightenment-through-iperf">Enlightenment through iperf</h4>
+
+<p>iperf beautifully solves two problems. First, how to generate a fixed amount of traffic and measure packet loss at that rate. “Send 30 Mbps of UDP to this IP, regardless of TCP congestion control, packet loss, or anything else.”  Second, how to simulate a TCP flow given different parameters (bitate, window size).</p>
+
+<h4 id="see-whole-packet-payload-not-just-headers-with-tcpdump">See whole packet payload, not just headers, with tcpdump</h4>
+
+<p>Most folks have used tcpdump to show packet headers. Even handier for diagnosing protocol-related problems is to print the full payload. To disable reverse DNS lookups, sniff eth0, print the payload, and sample whole packet: <code class="language-plaintext highlighter-rouge">tcpdump -n -i eth0 -X -s 0</code></p>
+
+<h4 id="find-a-lan-ips-port-without-tracing-cables">Find a LAN IP’s port without tracing cables</h4>
+
+<p>Get the MAC address. Using another system or router on the same segment, generate traffic to the IP in question. First, get its MAC: <code class="language-plaintext highlighter-rouge">arp -a</code> or <code class="language-plaintext highlighter-rouge">show arp</code>. Then find the MAC. In IOS: <code class="language-plaintext highlighter-rouge">show mac-address-table address 00ff.dead.beef</code></p>
+
+<h4 id="5-minute-samples-are-almost-meaningless-for-many-traffic-profiles">5 minute samples are almost meaningless for many traffic profiles</h4>
+
+<p>While measuring usage counters every 5 minutes works wonderfully for calculating total traffic passed, in many cases it leads to wildly inaccurate throughput estimates. 5 minute averages round off most useful granularity; when a circuit’s 5 minute average usage is over 50%, it may already be the bottleneck for on microsecond granularity, depending on number of endpoints, traffic profile, serialization time, and other characteristics.</p>
+
+<p>Try polling 1 device on a 1 minute or 30 second sample and prepare to be amazed.</p>
+
+<h4 id="filtering-icmp-is-not-a-security-requirement-and-in-fact-doesnt-improve-security">Filtering ICMP is not a security requirement, and in fact doesn’t improve security.</h4>
+
+<p>It’s just really annoying. If you must filter, allow the types  required for basic operation, like TTL Exceeded and Host/Port Unreachable.</p>
+
+  </div>
+
+  <div class="post-meta">
+    
+    <time class="post-date dt-published" datetime="2008-04-28T00:00:00-07:00" itemprop="datePublished">April 28, 2008</time>
+  </div>
+
+  
+
+</article>
+
+
+    
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://seattleapproves.org/">
+            Seattle Approves
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://simpleoptout.com/">
+            Simple Opt Out
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://tacoapp.com/">
+            Taco
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="http://sawsafely.org/">
+            Saw Safely
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+    
+
+  </body>
+</html>

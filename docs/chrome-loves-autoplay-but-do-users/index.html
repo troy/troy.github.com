@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Troy Davis &mdash; Chrome loves auto-play, but do users?</title>
+
+    <meta name="description" content="Everything is an experiment.">  
+
+    <link rel="stylesheet" href="/assets/css/main.css?1669056688359197000">
+
+    <link rel="apple-touch-icon" href="">    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="/images/favicon.png" rel="icon">
+
+    <link type="application/atom+xml" rel="alternate" href="/feed" title="Troy Davis" />
+</head>
+  <body>
+
+    
+    
+
+    
+  
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting" id="main" role="article" aria-label="Content">
+
+  
+    <h1 class="post-title divided p-name" itemprop="name headline">
+      Chrome loves auto-play, but do users?
+    </h1>
+  
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I’ve encountered <a href="https://news.ycombinator.com/item?id=17036803#17037992">many</a>, <a href="https://news.ycombinator.com/item?id=16367457#16370471">many</a> <a href="https://news.ycombinator.com/item?id=17008991#17009630">examples</a> that:</p>
+
+<ol>
+  <li>in some cases, users don’t want Chrome to auto-play any videos – even muted ones (mostly because sites abuse the privilege by autoplaying unrelated overlay videos), and</li>
+  <li>users incorrectly think Chrome’s <code class="language-plaintext highlighter-rouge">chrome://flags/#autoplay-policy</code> flag disables auto-playing videos, when it only affects auto-playing videos that aren’t muted</li>
+</ol>
+
+<p>Unfortunately, as of this post, Chrome’s <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes#new-behaviors">policy</a> is that “Muted autoplay is always allowed.”</p>
+
+<p>I’ve responded a few times on Hacker News to clarify the current behavior (see above links). The confusion and the unmet demand for disabling autoplay entirely, at least for certain domains, led me to <a href="https://twitter.com/troyd/status/994578157058441217">tweet</a> inviting the Chrome product management team to respond, then when they didn’t, to <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=840866#c126">comment on the Chromium bug tracker</a>.</p>
+
+<p>Google has never explained nor substantiated its decisions to allow muted autoplay by default, and not let users change that policy, at least globally and perhaps on a per-site basis. Since Google has a clear conflict of interest, both decisions justify more transparency than they’ve been given.</p>
+
+<p>I don’t have any data about user preferences for muted auto-play. I do know that no one likes the current behavior and that Chrome has per-domain controls for far less frequently used – and less polarizing – features, like whether to clear cookies on exit.</p>
+
+<p>Here’s my Chromium bug tracker <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=840866#c126">comment</a>:</p>
+
+<hr />
+
+<p>Anyone have some data that substantiates the theory that users want muted videos to autoplay by default (rather than, say, on a per-domain basis like cookie retention and “Clear cookies on exit” settings)?</p>
+
+<p>It’s entirely anecdotal (that’s why I’m asking for data…), but everyone I know can’t stand muted autoplay. Google didn’t provide any reasoning or substantiation why “Muted autoplay is always allowed” in https://developers.google.com/web/updates/2017/09/autoplay-policy-changes. Advertisers and consumer-facing sites abuse that privilege by autoplaying muted unrelated videos.</p>
+
+<p>Clearly some users want autoplay for some domains. My question is whether at least a meaningful percentage of users would prefer to disable autoplay entirely, even for muted videos, at least for some domains.</p>
+
+<p>Related discussion: https://news.ycombinator.com/item?id=17036803#17037890</p>
+
+  </div>
+
+  <div class="post-meta">
+    
+    <time class="post-date dt-published" datetime="2018-05-17T10:46:01-07:00" itemprop="datePublished">May 17, 2018</time>
+  </div>
+
+  
+
+</article>
+
+
+    
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://seattleapproves.org/">
+            Seattle Approves
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://simpleoptout.com/">
+            Simple Opt Out
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://tacoapp.com/">
+            Taco
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="http://sawsafely.org/">
+            Saw Safely
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+    
+
+  </body>
+</html>

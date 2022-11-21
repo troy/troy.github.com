@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Troy Davis &mdash; Towards BPM-based "Exercise Radio" stations</title>
+
+    <meta name="description" content="Everything is an experiment.">  
+
+    <link rel="stylesheet" href="/assets/css/main.css?1669056688359197000">
+
+    <link rel="apple-touch-icon" href="">    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="/images/favicon.png" rel="icon">
+
+    <link type="application/atom+xml" rel="alternate" href="/feed" title="Troy Davis" />
+</head>
+  <body>
+
+    
+    
+
+    
+  
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting" id="main" role="article" aria-label="Content">
+
+  
+    <h1 class="post-title divided p-name" itemprop="name headline">
+      Towards BPM-based "Exercise Radio" stations
+    </h1>
+  
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><strong>Update</strong> (2015-11-23): Spotify has this! Check out
+<a href="https://www.spotify.com/us/running/">Spotify Running</a> for tempo-based
+playlists and automatic tempo calculation.</p>
+
+<p>Someone, somewhere has the metadata and music chops to deliver BPM-based radio streams. DJs and gym rats will follow. A couple ideas.</p>
+
+<p>The closest are <a href="http://developer.echonest.com/">Echo Nest’s API</a> (<code class="language-plaintext highlighter-rouge">get_tempo</code>) and <a href="http://www.last.fm/api">Last.fm’s</a> API (<code class="language-plaintext highlighter-rouge">Track.getInfo</code>). Echo Nest’s requires uploading the song audio data (which I don’t have). Last.fm’s can be queried with metadata (artist+song name) yet doesn’t provide BPM. This NYTimes <a href="http://gadgetwise.blogs.nytimes.com/2009/06/19/marathon-tech-review-music-you-can-run-to/">Gadgetwise blog post</a> has local file (MP3) and podcast options.</p>
+
+<p>I posted this to the <a href="http://www.last.fm/group/Last.fm+Web+Services/forum/21604/_/568730">Last.fm Web Services</a> discussion group, and <a href="http://twitter.com/troyd/status/4352076414">asked on Twitter</a>. I’ll update this post if something comes of it.</p>
+
+<hr />
+
+<p>I prefer to exercise to music, and it’s much nicer when the beats per minute matches what I’m physically doing. I think this could happen 3 ways:</p>
+
+<ol>
+  <li>
+    <p>Faster/slower tempo adjustment of any station. This could be a really awesome subscriber feature.</p>
+  </li>
+  <li>
+    <p>Adding BPM as a new radio station “station type” (from <a href="http://www.last.fm/api/radio">http://www.last.fm/api/radio</a> and exposing it in the UI as a Tempo dropdown. For example: lastfm://bpm/140</p>
+  </li>
+  <li>
+    <p>A third party app which creates/queues a playlist based on BPM. This would be almost entirely doable with the existing API (get similar artists, add to playlist) if <code class="language-plaintext highlighter-rouge">track.getInfo</code> included BPM.</p>
+
+    <p>There’s lots of docs for estimating BPM for a bitstream, but short of someone with a huge music collection, Last.fm would need to pregenerate them and expose it in the API. This API is particularly well thought out: <a href="http://developer.echonest.com/docs/method/get_tempo/">http://developer.echonest.com/docs/method/get_tempo/</a> (but it too needs the bits; it’s not an existing database).</p>
+
+    <p>Mass BPM calculations would be a killer use for Map/Reduce.</p>
+  </li>
+</ol>
+
+  </div>
+
+  <div class="post-meta">
+    
+    <time class="post-date dt-published" datetime="2009-09-25T00:00:00-07:00" itemprop="datePublished">September 25, 2009</time>
+  </div>
+
+  
+
+</article>
+
+
+    
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://seattleapproves.org/">
+            Seattle Approves
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://simpleoptout.com/">
+            Simple Opt Out
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://tacoapp.com/">
+            Taco
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="http://sawsafely.org/">
+            Saw Safely
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+    
+
+  </body>
+</html>

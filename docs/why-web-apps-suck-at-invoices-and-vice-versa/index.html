@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Troy Davis &mdash; Why Web apps suck at invoices (and vice versa)</title>
+
+    <meta name="description" content="Everything is an experiment.">  
+
+    <link rel="stylesheet" href="/assets/css/main.css?1669056688359197000">
+
+    <link rel="apple-touch-icon" href="">    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="/images/favicon.png" rel="icon">
+
+    <link type="application/atom+xml" rel="alternate" href="/feed" title="Troy Davis" />
+</head>
+  <body>
+
+    
+    
+
+    
+  
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting" id="main" role="article" aria-label="Content">
+
+  
+    <h1 class="post-title divided p-name" itemprop="name headline">
+      Why Web apps suck at invoices (and vice versa)
+    </h1>
+  
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>On the <a href="https://scoutapp.com/">Scout</a> support <a href="https://groups.google.com/group/scoutapp">mailing list</a>, a prospective customer asked to receive an invoice instead of the typical credit card payment. I have some unique experience with that, so I posted the comment below as food for thought (see <a href="https://groups.google.com/group/scoutapp/browse_thread/thread/660f3ade8bcd5928/e3dce7fb91a7d1b2?#e3dce7fb91a7d1b2">thread</a>).&lt;/p&gt;</p>
+
+<p>This is “Why Web apps suck at invoices” and “Why invoices suck for Web apps,” all rolled into one. Next time someone requests an invoice, send them here.</p>
+
+<hr />
+
+<p>Subject: invoice billing (was: Re: Fees for Rails Apps..)</p>
+
+<p>I’m not affiliated with Scout except as a customer, but I run an unrelated subscription Web service that sells to businesses and I’m occasionally asked the same question. It sounds like a really simple request, so I can understand the frustration at not being able to accommodate it.</p>
+
+<p>I wanted to add some color about how challenging it is to provide invoices. I’m speaking only about my experience, not Scout’s. Here’s why this is often a much bigger pain than it looks like, and is often actually a disadvantage to both parties:</p>
+
+<ul>
+  <li>
+    <p>Everything is a one-off. Almost everyone who wants an invoice also needs some other customization: the delivery process, the followup, the formatting (“We’re in Germany and our government requires you to tell us who we are”), whatever. Aside from tracking those one-offs, they makes it harder to solve or automate the other issues below. Which leads me to..</p>
+  </li>
+  <li>
+    <p>Everything requires a human. If you don’t pay, a human has to email you, and it will almost never be worth the time to automate that process (especially in light of customer-specific processes above). Even something as simple as a credit becomes a time sink. A human needs to figure out how much is due (best case, transferring the amount from a summary email that a developer had to implement; worst case, calculating it manually); figure out how to get you the money (edit a future invoice, reissue an existing invoice, or cut you a check); deliver that credit, probably to someone in accounting who doesn’t know anything about what’s being purchased; process the payment; and come back a few weeks later to verify it was paid.</p>
+  </li>
+  <li>
+    <p>Someone has to go to the PO Box and then to the bank, and it needs to happen often enough that you don’t look like an idiot for depositing a 2 month old check.</p>
+  </li>
+  <li>
+    <p>Reconciliation is harder. Accounting typically needs an entry for every individual customer payment, rather than one per day per credit card or however other transactions are handled.</p>
+  </li>
+  <li>
+    <p>Having an elastic payment method is really awesome, and our service and many others bake that assumption into our UX decisions and business processes. By “elastic” I mean that the amount isn’t set in stone a month before the service is provided. What should happen if you add a new host that you didn’t plan for? Does the vendor extend credit, or do they issue an invoice with a pro-rated line item and make you wait until it’s paid? How about 100 new hosts? Before long, the customer is predicting and committing to a certain amount of usage, quite possibly just to make billing simpler, and we’ve undone 15 years of software-as-a-service progress.</p>
+  </li>
+  <li>
+    <p>All of this distracts from making the product better. Whether a company has 2 people or 100, the resources are finite, and at some level any other work is in place of product improvements. No Web service will ever be great at invoicing, most will never be good at it, and not one will ever enjoy it. That “morale debt” accumulates.</p>
+  </li>
+  <li>
+    <p>The overhead will eventually be reflected in prices, and it’s way higher than the ~3% for credit cards. This thread started as a question about fees. One reason that Scout is such a good value is that their decisions mostly optimize for practical value. Building off its usage-based fees, would you be willing to pay a $25/invoice fee, and/or have a $500/invoice minimum? From my own experience, that’s the absolute minimum it takes to make this practical, and I’m probably still way too low.</p>
+  </li>
+</ul>
+
+<p>None of this is rocket science, it just takes time, and that’s why invoices suck for typical business subscription services. I consider it a positive that Scout is savvy enough to focus on what they’re good at.</p>
+
+<p>Finally, a potential solution: get a company card that’s only used for recurring purchases like this. You’re freed from monthly employee expense reports and accounting gains authoritative information about the transaction, since it’s essentially their card.</p>
+
+  </div>
+
+  <div class="post-meta">
+    
+    <time class="post-date dt-published" datetime="2012-09-04T00:00:00-07:00" itemprop="datePublished">September 4, 2012</time>
+  </div>
+
+  
+
+</article>
+
+
+    
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://seattleapproves.org/">
+            Seattle Approves
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://simpleoptout.com/">
+            Simple Opt Out
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://tacoapp.com/">
+            Taco
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="http://sawsafely.org/">
+            Saw Safely
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+    
+
+  </body>
+</html>

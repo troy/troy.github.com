@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="/feed" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-11-21T10:51:28-08:00</updated><id>/feed</id><title type="html">Troy Davis</title><subtitle>Everything is an experiment.</subtitle><entry><title type="html">Letter to Washington State legislators about consumer data privacy bill (SB 5062)</title><link href="/letter-to-washington-state-legislators-about-consumer-data-privacy-bill-sb-5062/" rel="alternate" type="text/html" title="Letter to Washington State legislators about consumer data privacy bill (SB 5062)" /><published>2021-03-19T07:09:05-07:00</published><updated>2021-03-19T07:09:05-07:00</updated><id>/letter-to-washington-state-legislators-about-consumer-data-privacy-bill-sb-5062</id><content type="html" xml:base="/letter-to-washington-state-legislators-about-consumer-data-privacy-bill-sb-5062/"><![CDATA[<p>The Washington State legislature is considering a consumer data privacy bill, <a href="https://app.leg.wa.gov/billsummary?BillNumber=5062&amp;Year=2021&amp;Initiative=false">Senate Bill 5062</a> (<a href="http://lawfilesext.leg.wa.gov/biennium/2021-22/Pdf/Bill%20Reports/House/5062-S2%20HBA%20CRJ%2021.pdf?q=20210319070334">summary</a>). While I was creating <a href="https://simpleoptout.com/">Simple Opt Out</a>, I assumed that the <a href="https://oag.ca.gov/privacy/ccpa">CCPA</a> made consumers opt-out of paid data sharing - not a business sharing data to target their own ads, but selling consumers’ personal data to unaffiliated third parties for compensation - due to an oversight. When the CCPA was in process, not everyone realized that retailers would sell their customers’ purchase history to anyone who would pay. It may not have stood out from targeted advertising and may have actually been an oversight.</p>
+
+<p>Not for this Washington State bill. Turns out that many, if not all of this bill’s sponsors know that its default protection is incredibly weak. By now, legislators are aware that consumers’ data is sold to unaffiliated third parties - and that no consumer would opt in to that. They just don’t care or don’t care enough to do anything about it.</p>
+
+<p>That’s why I sent this letter to the Washington State House of Representatives <a href="https://leg.wa.gov/House/Committees/CRJ/Pages/default.aspx">Civil Rights &amp; Judiciary Committee</a> and individual members. While Washington is probably stuck with this bill - and privacy for a vanishingly small number of residents - I hope my self-contained explanation helps another state or motivates a Washington State legislator to close the data sales loophole.</p>
+
+<p>Here’s my letter.</p>
+
+<p><strong>Subject: SB 5062 - Please don’t let businesses sell my data unless I opt out</strong></p>
+
+<p>Dear Chair Hansen and Civil Rights &amp; Judiciary committee members,</p>
+
+<p>My comments are about requiring consumers to opt out of having their data sold to third parties for compensation, as SB 5062 currently does.</p>
+
+<p><strong>If you’ve purchased from Ace Hardware, Crate and Barrel, Home Depot, the Seattle Art Museum, or hundreds of other companies, they sell or trade your information - often including purchase history, contact information, and preferences - to third parties</strong> for a few extra cents of gain. Yes, completely unrelated companies know what you bought at many traditional and online retailers.</p>
+
+<p>These businesses don’t do this in order to operate or market their business (as is the case with targeted advertising). Rather, this is turning the consumer into the product: selling customer information to completely unrelated businesses, merely because they’ll pay for it.</p>
+
+<p><strong>Reasonable people can debate the pros and cons of targeted advertising, but the practice I’m talking about, selling detailed data about customers to third parties, has no pros. It shouldn’t have ever been legal.</strong></p>
+
+<p>I know because I spent 100+ hours reading privacy policies, finding these practices, and creating a directory of opt-out instructions. My not-for-profit site, <a href="https://simpleoptout.com/">https://SimpleOptOut.com</a>, has made it a bit easier for tens or hundreds of thousands of people to opt out of data sharing that they would never have opted in to.</p>
+
+<p><strong>I want the Washington legislature to make my Web site obsolete.</strong></p>
+
+<p>This bill begins with ”The legislature finds that the people of Washington regard their privacy as a fundamental right” … and.. then it disregards that statement by requiring Washingtonians to opt out of these sales. Has anyone on the committee actually tried to opt out of data sharing? I have. You’ll spend most of a day digging through privacy policies, calling phone numbers, filling out web forms, and printing and mailing letters. If you’re lucky, after doing that 30 or 40 or 50 times, you’ll cover about half of the businesses that sell your data. My Web site makes that easier, but not easy – and that’s only because I’ve tried to mitigate a problem that the legislature should solve.</p>
+
+<p><strong>Opting out of data sharing requires so much time that less than 1% of Washington residents will actually do it.</strong> Instead of 100% of Washington residents having this so-called “fundamental right,” this bill will provide it to less than 1%. And that 1% will be well-educated computer engineers and attorneys. This bill makes privacy contingent on resources, on privilege and for no commercial justification. <strong>Unlike advertising, this doesn’t help a business deliver or market their products.</strong></p>
+
+<p><strong>Since literally zero Washingtonians would opt in to having businesses sell their personal information for extra revenue, forcing each of us to opt out with each business is nonsensical.</strong></p>
+
+<p>Imagine if, in order to have First Amendment protection for something you wrote, you needed to visit every web site which might publish it or have access to it, find their instructions for opting out of First Amendment violations, and follow them - which could take two minutes or twenty minutes each - and then hope the business actually processed your request.</p>
+
+<p><strong>Or, imagine if every time you moved, you needed to call or visit the new city, county, state, and federal police and fill out a “Fourth Amendment violation opt-out” form.</strong> This form requested that they not unreasonably search or seize your property. Oh, you didn’t spend the time to opt-out of Fourth Amendment violations? You must not mind them.</p>
+
+<p>That’s how this bill handles unnecessary data sharing. The right to <em>request</em> that an entity <em>not</em> sell my personal information to third parties… that’s not privacy. <strong>Privacy is not needing to do that in the first place.</strong></p>
+
+<p>There’s a better way. <strong>Require residents to opt in to data sharing for compensation.</strong> If privacy is a fundamental right like this bill says, then privacy should be the default. <strong>Nobody needs to opt out of having their other rights violated, and we shouldn’t need to opt out of having our privacy violated, either.</strong></p>
+
+<p>Alternatively, if the bill is going to require opting out, then change the rest of the bill so it’s accurate. Instead of stating that privacy is a fundamental right, explain that privacy is a luxury that the legislature is offering to state’s most privileged and technically experienced residents. Explain that businesses can assume residents don’t deserve and shouldn’t receive privacy, unless and until each individual informs each business using whatever method the business prefers.</p>
+
+<p>If you’re thinking, “Wow, that sounds terrible,” you’re right. It does, because it is. All I did is accurately describe the bill’s current treatment of selling data.</p>
+
+<p><strong>Businesses should be able to deliver the products and services that we depend on, and to market them effectively, but not to share or sell our personal information with unaffiliated third parties for compensation.</strong> Please change this bill to deliver privacy for 100% of Washingtonians, not less than 1% like it does now.</p>
+
+<p>Thank you,</p>
+
+<p>Troy</p>]]></content><author><name></name></author><summary type="html"><![CDATA[The Washington State legislature is considering a consumer data privacy bill, Senate Bill 5062 (summary). While I was creating Simple Opt Out, I assumed that the CCPA made consumers opt-out of paid data sharing - not a business sharing data to target their own ads, but selling consumers’ personal data to unaffiliated third parties for compensation - due to an oversight. When the CCPA was in process, not everyone realized that retailers would sell their customers’ purchase history to anyone who would pay. It may not have stood out from targeted advertising and may have actually been an oversight.]]></summary></entry><entry><title type="html">Checklist for configuring iPad for regular people</title><link href="/checklist-for-configuring-ipad-for-regular-people/" rel="alternate" type="text/html" title="Checklist for configuring iPad for regular people" /><published>2021-02-03T12:19:17-08:00</published><updated>2021-02-03T12:19:17-08:00</updated><id>/checklist-for-configuring-ipad-for-regular-people</id><content type="html" xml:base="/checklist-for-configuring-ipad-for-regular-people/"><![CDATA[<p>I configured some iPads for regular people. If you’re configuring an iPad for a
+parent, young child, or a good friend who is new to the iPad or new to
+computers, maybe <a href="https://discussions.apple.com/thread/252404401">the checklist I posted</a> 
+will give you a starting point.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[I configured some iPads for regular people. If you’re configuring an iPad for a parent, young child, or a good friend who is new to the iPad or new to computers, maybe the checklist I posted will give you a starting point.]]></summary></entry><entry><title type="html">Chrome loves auto-play, but do users?</title><link href="/chrome-loves-autoplay-but-do-users/" rel="alternate" type="text/html" title="Chrome loves auto-play, but do users?" /><published>2018-05-17T10:46:01-07:00</published><updated>2018-05-17T10:46:01-07:00</updated><id>/chrome-loves-autoplay-but-do-users</id><content type="html" xml:base="/chrome-loves-autoplay-but-do-users/"><![CDATA[<p>I’ve encountered <a href="https://news.ycombinator.com/item?id=17036803#17037992">many</a>, <a href="https://news.ycombinator.com/item?id=16367457#16370471">many</a> <a href="https://news.ycombinator.com/item?id=17008991#17009630">examples</a> that:</p>
+
+<ol>
+  <li>in some cases, users don’t want Chrome to auto-play any videos – even muted ones (mostly because sites abuse the privilege by autoplaying unrelated overlay videos), and</li>
+  <li>users incorrectly think Chrome’s <code class="language-plaintext highlighter-rouge">chrome://flags/#autoplay-policy</code> flag disables auto-playing videos, when it only affects auto-playing videos that aren’t muted</li>
+</ol>
+
+<p>Unfortunately, as of this post, Chrome’s <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes#new-behaviors">policy</a> is that “Muted autoplay is always allowed.”</p>
+
+<p>I’ve responded a few times on Hacker News to clarify the current behavior (see above links). The confusion and the unmet demand for disabling autoplay entirely, at least for certain domains, led me to <a href="https://twitter.com/troyd/status/994578157058441217">tweet</a> inviting the Chrome product management team to respond, then when they didn’t, to <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=840866#c126">comment on the Chromium bug tracker</a>.</p>
+
+<p>Google has never explained nor substantiated its decisions to allow muted autoplay by default, and not let users change that policy, at least globally and perhaps on a per-site basis. Since Google has a clear conflict of interest, both decisions justify more transparency than they’ve been given.</p>
+
+<p>I don’t have any data about user preferences for muted auto-play. I do know that no one likes the current behavior and that Chrome has per-domain controls for far less frequently used – and less polarizing – features, like whether to clear cookies on exit.</p>
+
+<p>Here’s my Chromium bug tracker <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=840866#c126">comment</a>:</p>
+
+<hr />
+
+<p>Anyone have some data that substantiates the theory that users want muted videos to autoplay by default (rather than, say, on a per-domain basis like cookie retention and “Clear cookies on exit” settings)?</p>
+
+<p>It’s entirely anecdotal (that’s why I’m asking for data…), but everyone I know can’t stand muted autoplay. Google didn’t provide any reasoning or substantiation why “Muted autoplay is always allowed” in https://developers.google.com/web/updates/2017/09/autoplay-policy-changes. Advertisers and consumer-facing sites abuse that privilege by autoplaying muted unrelated videos.</p>
+
+<p>Clearly some users want autoplay for some domains. My question is whether at least a meaningful percentage of users would prefer to disable autoplay entirely, even for muted videos, at least for some domains.</p>
+
+<p>Related discussion: https://news.ycombinator.com/item?id=17036803#17037890</p>]]></content><author><name></name></author><summary type="html"><![CDATA[I’ve encountered many, many examples that:]]></summary></entry><entry><title type="html">Roon: More ways to discover/play music not in my Roon library</title><link href="/roon-more-ways-to-discover-and-play-music-not-in-my-roon-library/" rel="alternate" type="text/html" title="Roon: More ways to discover/play music not in my Roon library" /><published>2018-05-14T10:40:08-07:00</published><updated>2018-05-14T10:40:08-07:00</updated><id>/roon-more-ways-to-discover-and-play-music-not-in-my-roon-library</id><content type="html" xml:base="/roon-more-ways-to-discover-and-play-music-not-in-my-roon-library/"><![CDATA[<p>I recently started using <a href="https://roonlabs.com/">Roon Labs</a> and <a href="https://community.roonlabs.com/t/more-any-ways-to-discover-play-music-not-in-my-roon-library/43136">posted this suggestion</a> in their customer Discourse forum.</p>
+
+<p>Here’s the suggestion:</p>
+
+<hr />
+
+<p>Hey all, here’s a wish and a few possible implementation ideas. Please understand that I’m spending the effort to write this down because I care about seeing Roon succeed, not because I want to slam Roon.</p>
+
+<p>Also, as with any feature request, some of this is almost certainly wrong or doesn’t apply to Roon’s business :-)</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>Make it easier - heck, make it possible - to play music that I haven’t explicitly added to my library. At a minimum, expose Tidal’s artist radio and track radio.</p>
+
+<p>One step up from there, make navigating between Roon’s version of an artist and Tidal’s more seamless, like letting me see my favorited or frequently played albums on Roon’s view of an artist (instead of a separate “Go to Tidal artist” dropdown choice and “Tidal artist” in search results).</p>
+
+<p>One step up from there, let me treat Tidal as my Roon library, at least in concept if not in implementation.</p>
+
+<p>Ideally, eliminate the idea of a binary “it’s in or it’s out” library entirely and split that into 2 concepts: music Roon has access to, and a continuum of opinions about that music (from love to hate). “The longer-term solution” has more on that.</p>
+
+<h2 id="background">Background</h2>
+
+<p>It feels like 10 or 15 years ago, the standard for music software was to play the music I had. Roon’s current feature set is basically the perfect implementation of what I wanted, and would have been thrilled with, in about 2005.</p>
+
+<p>In the last 10 years, a couple things changed:</p>
+
+<ul>
+  <li>Access to music. Thanks to Tidal (and before it, Rdio, Spotify, etc.) “My library” is actually almost the entire North American music catalog. I don’t have an “it’s in or out” library (where anything in the library should never be played), I have a continuum of I love, like, am so-so about, dislike, or never want to hear again.</li>
+  <li>Quality of that music. Tidal is as good or better than anything I’d ever have locally. In the last 2 years, lossless and MQA eliminated the last reason that music from other sources might not be as play-worthy as “library” music.</li>
+  <li>Expectations. Between the size of someone’s “library” (ie, all Tidal music) and the rise of machine learning, a computer (think Discover Weekly) can do a great job of finding new music I like – way better than I’d do with manual curation, and good enough that I’d put my effort into correcting it rather than creating playlists myself.</li>
+  <li>Publishing rate. The number of new songs appearing on even Tidal, let alone Spotify or Soundcloud, makes it impossible to listen to and curate new stuff even if I wanted to. I’d literally be listening to only new stuff just to decide whether I liked it.</li>
+  <li>User persona. 10 years ago, Roon would have been most valuable to folks with hundreds of albums (in a sense, Roon depended on a substantial investment in media). Not only is that no longer true, it might not even be a predictor of/correlated with interest in music or playback portability anymore. Now that lossless subscriptions exist, I’d guess that an appreciation for audio quality (ie, lossless playback) plus ownership of more than 1 output are better predictors of suitability for Roon than, say, a desire or past experience collecting albums.</li>
+</ul>
+
+<p>To boil this down: The idea of a binary “it’s in or out” library was a byproduct of needing to collect albums or at least ripped MP3s. Today, the hard part isn’t playing stuff that I know I like; that’s table stakes. The hard part is surfacing new stuff that I didn’t know I liked, and delivering a great playlist from the entire music catalog that (a) matches my mood or interests, and (b) doesn’t require explicit curation. That’s also the only viable way to surface new music at the scale it’s currently released.</p>
+
+<p>This is also where the market is going. In 3 years, the idea of a manually-curated library will feel even more outdated than it does now. Even if Roon considers music fanatics to be its only target user (and isn’t ever trying to serve a more mainstream audience), having a manually-curated library is not correlated with that category anymore. And if Roon does want to serve a mass market at some point, it’s a gatekeeper to doing that.</p>
+
+<h2 id="the-problem">The problem</h2>
+
+<p>Roon is built on the idea of a binary “in or out” library, which makes it difficult - actually, almost impossible - to play anything not in my library that I don’t curate manually (say, manually creating a playlist or going to a specific album).</p>
+
+<p>As an extreme example, if one uses Roon’s “Focus” feature and the Focus only matches a single song in one’s library, Roon will play that one song on a continuous loop.</p>
+
+<p>Imagine if, instead of listening to an entire set from Imogen Heap, you want a multi-artist playlist of stuff similar to or related to her or a song of hers, across all music you have access to (ie, Tidal, not one’s library). As I understand it and Roon’s staff confirmed, there’s no way to do that in Roon today.</p>
+
+<p>The obvious example is dynamic artist or track-inspired radio, what Tidal calls “Track radio” and “Artist radio.” These aren’t currently exposed anywhere in Roon. So, my first and probably simplest wish would be new choices in the “Play” dropdown for “Track radio” and “Artist radio” that use Tidal’s implementations of same.</p>
+
+<h2 id="the-longer-term-solution">The longer-term solution</h2>
+
+<p>If one agrees with the factors in “Background,” then having access to lossless versions of almost every song ever released should cause Roon to adapt. Today, the library serves 2 purposes:</p>
+
+<ol>
+  <li>Ability to play. Roon considers the library to be the music that it has access to (other than being specifically told to play an album not in my library)</li>
+  <li>Preferences. Roon considers adding something to my library as a proxy for my preferences. Music in one’s library is presumed to be loved (it’s the only music that Focus and Roon Radio will play), and music not in one’s library is presumed to be hated (never played automatically).</li>
+</ol>
+
+<p>These were never actually the same thing, though. Only item 1 - “Do I have a way to play this song?” - is binary. Item 2 is not binary. Right now, item 2 is treated as binary even though it’s not, and item 1 isn’t treated as a separate construct.</p>
+
+<p>Using Roon’s terminology, I want a way to add the entire Tidal catalog to my library. Obviously that’s probably not the best actual implementation, but it’s a good explanation. At that point, item 1 is actually correct (my library is all music that can be played, so Focus and Roon Radio can consider way more music), and item 2 would adjust based on ratings at playback.</p>
+
+<p>In practice, it probably means splitting these two purposes. Item 1 becomes “Anything on a remote service that I have access to, plus anything I have locally” and might eliminate the concept of a library.</p>
+
+<p>Hopefully obvious, but just to say it: none of this is mutually exclusive with local music storage. Someone with no Tidal subscription and purely locally-stored music is just a different set of item 1 – it’s no worse for them than today. The core concept is recognizing that for many Roon users, items 1 and 2 are actually separate concepts, so that for users who do have access to a ton of music (Tidal subscription), Roon automatically makes use of it.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[I recently started using Roon Labs and posted this suggestion in their customer Discourse forum.]]></summary></entry><entry><title type="html">DIY 360° review: how I asked colleagues for anonymous feedback about myself</title><link href="/diy-360-review-how-i-asked-colleagues-for-anonymous-feedback-about-myself/" rel="alternate" type="text/html" title="DIY 360° review: how I asked colleagues for anonymous feedback about myself" /><published>2017-10-31T07:45:31-07:00</published><updated>2017-10-31T07:45:31-07:00</updated><id>/diy-360-review-how-i-asked-colleagues-for-anonymous-feedback-about-myself</id><content type="html" xml:base="/diy-360-review-how-i-asked-colleagues-for-anonymous-feedback-about-myself/"><![CDATA[<p>I explicitly asked colleagues, customers, and friends for anonymous feedback about myself – a self-administered <a href="https://en.wikipedia.org/wiki/360-degree_feedback">360° review</a>. Here’s how I did so (twice in 5 years), and how anyone with 30 minutes can do so for free.</p>
+
+<h2 id="why-i-did-this">Why I did this</h2>
+
+<p>I thought that my role could make it less likely I’d receive unsolicited negative feedback, and that those negative comments were disproportionately valuable (compared to, say, compliments). Specifically:</p>
+
+<ul>
+  <li>I mostly work with people whom I hired or at least chose to work with, so I’m part of the furniture. It’s easy to think of me as an aspect of the company that can’t change, or that at least requires taking a risk to change.</li>
+  <li>While I regularly ask coworkers for feedback, making the feedback totally anonymous transfers the burden of interpretation on to the recipient, me. Since I care about the happiness of everyone I solicited feedback from, that’s ideal. I want someone to feel safe saying anything, even if it’s totally subjective and unsubstantiated. I can choose to disagree with and not act on it.</li>
+  <li>In a small company, there’s little or no formal HR. If I don’t solicit this feedback (or more broadly, try to personally improve), no one else is going to do it.</li>
+  <li>Although my main goal was incremental improvement, if I or the company did have any true blind spots, this could be the only way I’d find out. Sometimes a blind spot isn’t even a personal trait or skill, it’s not accommodating different <a href="https://www.yahoo.com/style/biggest-blind-spot-based-myers-briggs-type-173754783.html">personality-based perceptions</a>.</li>
+</ul>
+
+<h2 id="what-i-wanted-to-learn">What I wanted to learn</h2>
+
+<p>In product management, asking users for non-specific comments (“Do you like our product?”) usually leads to less actionable feedback than providing a bit of focus, or even a lot of focus.</p>
+
+<p>I wanted this survey to take less than 10 minutes, and if a recipient didn’t have much to say, less than 5. That meant I couldn’t ask many questions. I asked open-ended questions for recipients who wanted them, but also tried to save time with short answer form fields and some pre-populated choices.</p>
+
+<p>I was most interested in things which don’t come up on their own in daily conversation, so here’s what I asked:</p>
+
+<ol>
+  <li>When you think of Troy, do any word(s) come to mind?</li>
+  <li>What is Troy best at?</li>
+  <li>What is Troy worst at?</li>
+  <li>When I interact with Troy, it’s (choose one): Painful; Tolerable; Unremarkable; Enjoyable; Great; Describe it yourself</li>
+  <li>Complete the sentence: “My own work with Troy would be more gratifying if he…”</li>
+  <li>Tell me anything - things I suck at, life advice, whatever.</li>
+</ol>
+
+<p>If you do this, adapt the questions and answers to your personality and situation. I’ve this twice, so the questions above</p>
+
+<h2 id="how-i-asked">How I asked</h2>
+
+<h4 id="a-wufoo-form">A Wufoo form</h4>
+
+<p>I chose Wufoo because its form URLs are so simple: anyone can see they don’t contain personally-identifiable information like a UUID, so it’s relatively anonymous. I also stated that in the preface. Also, Wufoo’s standard themes feel very approachable.</p>
+
+<p>Here’s the form exactly as reviewers saw it:</p>
+
+<p><img src="/images/diy-360-review-wufoo.png" alt="" /></p>
+
+<h4 id="an-email-request">An email request</h4>
+
+<p>I emailed myself and BCC’ed about 20:</p>
+
+<ul>
+  <li>Coworkers</li>
+  <li>Business counterparties, though not only those who I interacted with the most. I biased the sample towards edge cases: projects where I wasn’t sure how satisfied the other person was (an open feedback loop), one-off tasks which I felt pushed my skills or where I may have under-executed, and personality types whom I didn’t interact with very often. Basically, I tried to get as wide a range, and as much criticism, as I could.</li>
+  <li>Friends</li>
+</ul>
+
+<p>Here’s the email, exactly as sent:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hi,
+
+I'm conducting an anonymous 360-degree review of myself.  You're
+receiving this because we've worked or interacted a lot, over a long
+period of time, or in a unique situation, and I value your feedback.
+
+I'd really appreciate 5-10 minutes of your time, preferably by Sunday,
+April 14. Head over here:
+
+    http://example.wufoo.com/my-form
+
+The URL has more. Again, it's completely anonymous and should only
+take a few minutes. If you have questions, just reply.
+
+Thank you!
+
+Troy
+</code></pre></div></div>
+
+<h2 id="results">Results</h2>
+
+<p>I received the same number of form submissions as received my email, so in as much as I can measure, 100% responded. None of the comments were totally surprising (not a bad thing!) and they actually skewed more positive than I expected. There’s no substitute for seeing people’s assessments in their own words, though. The return for the time - mine and others’ - was very high. I did this twice over 3 years and I’ll do it again if I’m in a similar working situation.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[I explicitly asked colleagues, customers, and friends for anonymous feedback about myself – a self-administered 360° review. Here’s how I did so (twice in 5 years), and how anyone with 30 minutes can do so for free.]]></summary></entry><entry><title type="html">Questions to ask before joining a startup</title><link href="/questions-to-ask-before-joining-a-startup/" rel="alternate" type="text/html" title="Questions to ask before joining a startup" /><published>2017-10-22T11:16:16-07:00</published><updated>2017-10-22T11:16:16-07:00</updated><id>/questions-to-ask-before-joining-a-startup</id><content type="html" xml:base="/questions-to-ask-before-joining-a-startup/"><![CDATA[<p>A friend asked what I’d want to know about a startup, even a late-stage one, in order to better evaluate a job offer. Here’s the short list of less-obvious questions I’d ask before joining a startup.</p>
+
+<h4 id="the-role">The role</h4>
+
+<ul>
+  <li>If you could make one impact in the business in your first 6-12 months, what what would it be (according to them)? This is as much to understand the metric they chose - revenue? product usage? features shipped? employees hired? - and why it’s important as it is to understand the amount.</li>
+  <li>Where do you see the company in 3 years? What internal or industry changes might make you cut the vision short or significantly change the goal?</li>
+  <li>Is there an employee who everyone thinks of as very connected and savvy, who you could use as a mentor for a few months to learn the communication style? If you’re remote, ideally this person will be too.</li>
+</ul>
+
+<h4 id="the-offer">The offer</h4>
+
+<ul>
+  <li>Get enough understanding of the company’s cap table to have an idea what your offer represents. At a minimum, ask what percent of the shares currently outstanding your options would be, if they were vested.</li>
+  <li>What happens to vested options if you leave? Have they solved <a href="http://www.businessinsider.com/pinterest-will-let-employees-exercise-options-for-seven-years-after-leaving-2015-3">this</a> <a href="https://news.ycombinator.com/item?id=9253497">problem</a>? If not, it dramatically decreases the value of the options; you basically have to stay until IPO (or some resale event) or acquisition, or take a risk that few people would (exercising illiquid options), or leave without the vested options. 7 years is great. 3 years is okay. Given how long companies remain private, 1 year or less make the options basically toys.</li>
+</ul>
+
+<h4 id="meta">Meta</h4>
+
+<ul>
+  <li>Is the company forthcoming with the answers? Best case: the company not only answers the questions thoroughly, but also gives detailed reasoning behind their answers. If it seems like they’re reluctant to answer (or worse, dismissive of your need to know), that may be a hint how important employees’ concerns are, how much they’ve thought about the role you’d be doing, or how savvy other recent new employees are.</li>
+</ul>]]></content><author><name></name></author><summary type="html"><![CDATA[A friend asked what I’d want to know about a startup, even a late-stage one, in order to better evaluate a job offer. Here’s the short list of less-obvious questions I’d ask before joining a startup.]]></summary></entry><entry><title type="html">If Yelp put quality above quantity…</title><link href="/if-yelp-put-quality-above-quantity-dot-dot-dot/" rel="alternate" type="text/html" title="If Yelp put quality above quantity…" /><published>2016-07-29T11:09:35-07:00</published><updated>2016-07-29T11:09:35-07:00</updated><id>/if-yelp-put-quality-above-quantity-dot-dot-dot</id><content type="html" xml:base="/if-yelp-put-quality-above-quantity-dot-dot-dot/"><![CDATA[<p>I posted <a href="https://news.ycombinator.com/item?id=12188315">this comment</a> on <a href="https://news.ycombinator.com/item?id=12184688">this Hacker News thread</a>:</p>
+
+<p>If Yelp put accuracy and completeness ahead of # of reviews, they’d have already made 2 changes:</p>
+
+<ol>
+  <li>Let anyone comment on other people’s comments - like HN or Reddit, with similar reputation (points) and up/downvotes.
+ Right now, unless an owner monitors and responds to every negative comment, there’s no recourse for being unreasonable or flat-out inaccurate. Even when an owner does so, the recourse is minimal. Let any other Yelp user reply, turning each comment into a thread.</li>
+  <li>When someone posts a 1- or 2-star review, show a second, required comment field for “What happened when you informed the retailer?”
+ If someone is served a meal they don’t like and says nothing at the time, they skipped a - the - critical step. While there are cases where a low review could be justified without ever giving the retailer a chance to address the perceived problem (like if someone showed up twice during posted business hours and the retailer was closed), they cause fewer than 10% of 1- and 2-star ratings and they’re easy to explain. Otherwise, the minimum for a negative review to be constructive is having informed the retailer (and let them try to address it).</li>
+</ol>]]></content><author><name></name></author><summary type="html"><![CDATA[I posted this comment on this Hacker News thread:]]></summary></entry><entry><title type="html">FastMail as “customer or consumer?” experiment</title><link href="/fastmail-as-customer-or-consumer-experiment/" rel="alternate" type="text/html" title="FastMail as “customer or consumer?” experiment" /><published>2015-11-16T10:07:23-08:00</published><updated>2015-11-16T10:07:23-08:00</updated><id>/fastmail-as-customer-or-consumer-experiment</id><content type="html" xml:base="/fastmail-as-customer-or-consumer-experiment/"><![CDATA[<p>I posted <a href="https://news.ycombinator.com/item?id=10575488">this comment</a> on <a href="https://news.ycombinator.com/item?id=10572597">FastMail: Shutting down our XMPP service</a>.</p>
+
+<p>Background: A <a href="https://news.ycombinator.com/item?id=10572819">comment</a>
+criticized people for wanting to be “consumers” instead of “customers.”
+Many other comments implied that people should want to pay for service received
+and/or to encourage interoperability. That’s a fine opinion, but not when
+concurrently using Google because it’s free.</p>
+
+<p>Here’s the comment.</p>
+
+<p>–</p>
+
+<p>When someone raises this concern, I ask who hosts their personal email. 30-50% use a legacy free Google Apps account or Gmail. When I ask why, it’s a variation on “because FastMail <a href="https://www.fastmail.com/help/ourservice/pricing.html">costs</a> ~$40/year.”</p>
+
+<p>Of the rest, more than half host their own MX. While that’s totally reasonable, it means the percentage of people willing to pay just $3/month to be a customer is even smaller than it seems. And $40/year is the cheapest that one could ever hope “being a customer” would cost.</p>
+
+<p>So, lots of people say they want to be customers, but even when doing so is close to free, very few actually do.</p>
+
+<p>(Nothing wrong with using Google because it’s free, only while concurrently claiming to want to be a customer. I agree with your point and I’m a happy FastMail customer. I’m amazed FastMail can make a profit at $40 and it’s a huge credit to them that they can.)</p>]]></content><author><name></name></author><summary type="html"><![CDATA[I posted this comment on FastMail: Shutting down our XMPP service.]]></summary></entry><entry><title type="html">Comment on: How do I stop comparing myself to others?</title><link href="/comment-on-how-do-i-stop-comparing-myself-to-others/" rel="alternate" type="text/html" title="Comment on: How do I stop comparing myself to others?" /><published>2015-11-08T07:52:11-08:00</published><updated>2015-11-08T07:52:11-08:00</updated><id>/comment-on-how-do-i-stop-comparing-myself-to-others</id><content type="html" xml:base="/comment-on-how-do-i-stop-comparing-myself-to-others/"><![CDATA[<p>I posted a <a href="https://news.ycombinator.com/item?id=10528744">comment</a> on the
+Hacker News thread “<a href="https://news.ycombinator.com/item?id=10523788">Ask HN: How do I stop comparing myself to others?</a>.”</p>
+
+<p>Society didn’t offer “Start a geek-centric Web service, then spend years
+quietly building it profitably, and do so while living in a dozen different
+cities” as a viable journey, let alone a valuable goal.</p>
+
+<p>Here’s the comment:</p>
+
+<hr />
+
+<p>Find a goal or even a yardstick that’s more meaningful to you than to anyone else. Ideally, also find a path to it that’s uniquely appealing to you.</p>
+
+<p>It’s way harder to think about what you want than to hop on to society’s defaults (schools, work prestige, wealth, looks, ..). http://www.paulgraham.com/love.html touches on this (“if you admire two kinds of work equally, [choose the less prestigious]”).</p>
+
+<p>When no one else is trying to accomplish the same thing in the same way, only absolute measurements matter: how close did you get? How much did you enjoy the ride?</p>]]></content><author><name></name></author><summary type="html"><![CDATA[I posted a comment on the Hacker News thread “Ask HN: How do I stop comparing myself to others?.”]]></summary></entry><entry><title type="html">Papertrail joins SolarWinds and accelerates growth</title><link href="/papertrail-joins-solarwinds-and-accelerates-growth/" rel="alternate" type="text/html" title="Papertrail joins SolarWinds and accelerates growth" /><published>2015-04-28T09:00:00-07:00</published><updated>2015-04-28T09:00:00-07:00</updated><id>/papertrail-joins-solarwinds-and-accelerates-growth</id><content type="html" xml:base="/papertrail-joins-solarwinds-and-accelerates-growth/"><![CDATA[<p>I’m thrilled that Papertrail is now part of SolarWinds. Here’s more:</p>
+
+<ul>
+  <li><a href="http://blog.papertrailapp.com/papertrail-joins-solarwinds-and-accelerates-growth/">Papertrail joins SolarWinds and accelerates growth</a> on papertrailapp.com</li>
+  <li><a href="http://www.solarwinds.com/company/newsroom/press_releases/solarwinds_adds_cloud_based_log_management_acquisition_of_papertrail.aspx">SolarWinds Adds Cloud-based Log Management Capabilities with Acquisition of Papertrail</a> on solarwinds.com</li>
+  <li><a href="https://www.geekwire.com/2015/bootstrapper-success-story-seattle-startup-papertrail-sells-to-solarwinds-for-41m-in-cash/">Bootstrapper success story: Seattle startup Papertrail sells to SolarWinds for $41M in cash</a> on geekwire.com</li>
+</ul>]]></content><author><name></name></author><summary type="html"><![CDATA[I’m thrilled that Papertrail is now part of SolarWinds. Here’s more:]]></summary></entry></feed>

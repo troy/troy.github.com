@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Troy Davis &mdash; Clearer permission message for Chrome new tab extensions</title>
+
+    <meta name="description" content="Everything is an experiment.">  
+
+    <link rel="stylesheet" href="/assets/css/main.css?1669056688359197000">
+
+    <link rel="apple-touch-icon" href="">    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="/images/favicon.png" rel="icon">
+
+    <link type="application/atom+xml" rel="alternate" href="/feed" title="Troy Davis" />
+</head>
+  <body>
+
+    
+    
+
+    
+  
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting" id="main" role="article" aria-label="Content">
+
+  
+    <h1 class="post-title divided p-name" itemprop="name headline">
+      Clearer permission message for Chrome new tab extensions
+    </h1>
+  
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>In creating Taco’s <a href="https://tacoapp.com/chrome">Chrome extension</a>, I
+became familiar with Chrome’s permission system. An extension defines
+the information it accesses, like request history, and Chrome shows
+permission-specific descriptions to end users when they try to install
+it.</p>
+
+<p>I recently added the
+<a href="https://developer.chrome.com/extensions/topSites">topSites</a> permission
+to Taco’s extension, which grants very limited access: the URLs and page
+titles of the 20 most frequently visited sites. It’s the information
+shown on Chrome’s new tab page.</p>
+
+<p>When I added this permission, here’s what Chrome presented to users (as
+reported by a justifiably surprised user):</p>
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/tacoapp">@tacoapp</a> The reason I ask is that it states on your website that the extension &#39;can&#39;t access your browsing data&#39;… <a href="http://t.co/9EUFn4TrW5">pic.twitter.com/9EUFn4TrW5</a></p>&mdash; Adam Sait (@adamsait) <a href="https://twitter.com/adamsait/statuses/500257116566085632">August 15, 2014</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>“Read your browsing history” isn’t an accurate description of the access
+Taco has, especially when a different permission level (“history”)
+exists which does grant exactly that. I’m sure that led some users to
+uninstall the extension instead of upgrading and granting this
+permission, so I wanted to solve the problem for other users like this
+person and for other extension authors.</p>
+
+<p>I found <a href="https://code.google.com/p/chromium/issues/detail?id=362794">this</a>
+Chromium issue about improving permission descriptions and posted 
+<a href="https://code.google.com/p/chromium/issues/detail?id=362794#c15">a request</a>
+and a followup <a href="https://code.google.com/p/chromium/issues/detail?id=362794#c17">justification</a>,
+both duplicated below. The justification led to Chromium 
+<a href="https://code.google.com/p/chromium/issues/detail?id=404334">issue 404334</a>
+to change the description to something clearer, like “Read a list of the
+20 sites you most frequently visit.”</p>
+
+<hr />
+
+<h3 id="comment-1-original">Comment #1 (<a href="https://code.google.com/p/chromium/issues/detail?id=362794#c15">original</a>)</h3>
+
+<p>Our users encountered this problem. Namely, as
+<a href="https://developer.chrome.com/extensions/permission_warnings#warnings">permission warnings</a>
+says, the <code class="language-plaintext highlighter-rouge">topSites</code> permission causes users to see the same user-facing
+description as the <code class="language-plaintext highlighter-rouge">history</code> permission, even though it has far, far
+less access.</p>
+
+<p>Both permissions say it’s possible to “Read and modify your browsing
+history.” While that’s accurate for the history permission, for
+topSites, it should say something like “Read the 20 most frequently
+visited URLs” or “Read most frequently visited URLs.”</p>
+
+<p>(If one wanted to be really user-friendly, I could see checking for
+<code class="language-plaintext highlighter-rouge">newtab</code> in <code class="language-plaintext highlighter-rouge">chrome_url_overrides</code> and adjusting the message for that,
+like “Read most frequently visited URLs (such as for new tab pages)” or
+linking to a page which says same.)</p>
+
+<p>Anyway, end result is that right now, end users can’t tell the
+difference between two permissions which should involve very different
+amounts of trust.</p>
+
+<hr />
+
+<h3 id="comment-2-original">Comment #2 (<a href="https://code.google.com/p/chromium/issues/detail?id=362794#c17">original</a>)</h3>
+
+<p>Thanks for the fast reply and thoughtful comments, Mustafa. I totally
+agree that none of these is universally perfect. I do think there’s 3
+challenges with the current (new) topSites description:</p>
+
+<ol>
+  <li>
+    <p>When interpreted by almost any user, it’s inaccurate. No user thinks
+of “browsing history” as “the most frequently accessed sites,” let alone
+“the sites on my new tab page.” It uses a phrase (“browsing history”)
+which, while obviously not intentionally wrong, doesn’t mean what it’s
+intended to.</p>
+
+    <p>Here’s an example I encountered today: 
+<a href="https://twitter.com/adamsait/status/500242045701988353">tweet</a>. Nobody
+thinks “browsing history” means “URLs of top 20 sites.” This manifests
+in lower user satisfaction because users decline to use extensions
+they’d actually be comfortable with.</p>
+  </li>
+  <li>
+    <p>Users can’t differentiate between 2 very different permission levels.
+By conflating two very different amounts of access (<code class="language-plaintext highlighter-rouge">topSites</code> and
+<code class="language-plaintext highlighter-rouge">history</code>) into the same single message, a user isn’t told the difference.
+Many, maybe a majority of, users who would be uncomfortable granting
+history would be completely comfortable granting topSites.</p>
+
+    <p>In as much as the goal of the permissions system is to let users make
+informed decisions, two very different amounts of access should be
+described differently. (The corollary of this argument: if they aren’t
+different enough to justify different descriptions, we might as well
+obsolete topSites and exclusively use history. I don’t think that at
+all, though!).</p>
+  </li>
+  <li>
+    <p>It deters extensions from using topSites, or would if extension authors 
+knew about this problem ahead of time. I just released an update to a new 
+tab page which started using <code class="language-plaintext highlighter-rouge">topSites</code>
+(<a href="https://twitter.com/tacoapp/status/500268474560946177">tweet</a>). If I’d
+known 24 hours ago what I know now about the permission wording, I would
+not have added topSites support to our extension. Because it’s so
+generic, the user message is scarier than the feature justifies.</p>
+  </li>
+</ol>
+
+  </div>
+
+  <div class="post-meta">
+    
+    <time class="post-date dt-published" datetime="2014-08-16T10:38:02-07:00" itemprop="datePublished">August 16, 2014</time>
+  </div>
+
+  
+
+</article>
+
+
+    
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://seattleapproves.org/">
+            Seattle Approves
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://simpleoptout.com/">
+            Simple Opt Out
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://tacoapp.com/">
+            Taco
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="http://sawsafely.org/">
+            Saw Safely
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+    
+
+  </body>
+</html>

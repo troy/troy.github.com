@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Troy Davis &mdash; Making 2-factor authentication grow faster than linear</title>
+
+    <meta name="description" content="Everything is an experiment.">  
+
+    <link rel="stylesheet" href="/assets/css/main.css?1669056688359197000">
+
+    <link rel="apple-touch-icon" href="">    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="/images/favicon.png" rel="icon">
+
+    <link type="application/atom+xml" rel="alternate" href="/feed" title="Troy Davis" />
+</head>
+  <body>
+
+    
+    
+
+    
+  
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting" id="main" role="article" aria-label="Content">
+
+  
+    <h1 class="post-title divided p-name" itemprop="name headline">
+      Making 2-factor authentication grow faster than linear
+    </h1>
+  
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I’m doing what I can to spread the gospel of 2-factor authentication. My hope is that it will be adopted at a faster-than-linear rate, ideally much faster.</p>
+
+<p>2FA isn’t a silver bullet, but it’s a gigantic improvement for relatively little effort. The elements that prevented mainstream adoption - key fobs, constantly re-entering keys - are not present in modern implementations like Google’s. With most of the usability tradeoffs eliminated, we’re left with a fairly typical sales problem (and of course, more operators implementing Google’s 2FA or an equally elegant alternative).</p>
+
+<p>For my part, “doing what I can” means:</p>
+
+<ul>
+  <li>
+    <p>requiring 2FA on systems I maintain, at least where SSH keys aren’t practical or aren’t sufficient</p>
+  </li>
+  <li>
+    <p>sharing my success stories, especially how I solved common objections to 2FA (it’s annoying to use; I only have a few users; it’s a pain to setup)</p>
+  </li>
+  <li>
+    <p>helping others find accurate, deep descriptions of current threats (like <a href="http://krebsonsecurity.com/">Krebs on Security</a>) so they treat malware and botnets (and thus keystroke logging) as an endemic threat</p>
+  </li>
+</ul>
+
+<p>I think with enough satisfied users as advocates, 2FA could grow exponentially for a while (albeit with a <a href="http://www.wolframalpha.com/input/?i=1.03%5Ex">tiny base</a> today). Google has basically turned 2FA into an impulse decision with a simple pitch: “Have 5 minutes? Use wifi hotspots? Protect your email from hackers (free).” I’d settle for <a href="http://en.wikipedia.org/wiki/Logistic_function">logistic growth</a> up to something short of 100% adoption, though I’m not sure a hard <a href="http://20bits.com/article/three-myths-of-viral-growth">carrying capacity</a> exists. Future incremental usability improvements should make it palatable for more people.</p>
+
+<p>Sales starts with awareness: that it exists, that it’s already being used by seemingly-sane people to solve similar problems (indeed, <a href="http://en.wikipedia.org/wiki/Social_proof">social proof</a>), and that it stands up to daily production use. Here’s an email that I sent to the Seattle Internet Exchange <a href="http://www.seattleix.net/faq.htm">chat</a> mailing list.</p>
+
+<hr />
+
+<p>To: chat@</p>
+
+<p>Passing this on in case anyone else could use flexible, painless, free 2-factor auth for servers and network devices.</p>
+
+<p>I’ve been testing Google’s 2-factor authentication via a <a href="http://code.google.com/p/google-authenticator/wiki/PamModuleInstructions">PAM</a>. It’s working beautifully. Google has iOS, Android, and Blackberry one-time password <a href="http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=1066447">apps</a>. Ubuntu and Debian package the module as libpam-google-authenticator. During setup, it spits out the key as an ASCII QR code that the mobile apps read.</p>
+
+<p>I haven’t tried having RADIUS use google-authenticator’s PAM, but it seems like it would work. Other people talk about using it: <a href="http://code.google.com/p/google-authenticator/issues/detail?id=145"></a>.</p>
+
+<p>By default, SSH with challenge/response prompts for the challenge first (with a prompt of its own), but PAM supports a <a href="http://code.google.com/p/google-authenticator/issues/detail?id=39">concatenated mode</a> where the OTP is prepended to the static secret. This should play well with network devices that present a single password prompt. Google’s module validates the OTP, then passes the secret on to the next module as usual.</p>
+
+<p>Also, SSH authorized keys still work (assuming the SSH config permits them), so you can decide how annoying one-time passwords will be.</p>
+
+<p>Finally, worth noting that this setup is completely separate from having a Google account. An account isn’t required. This setup uses Google’s mobile app implementation of <a href="http://tools.ietf.org/html/rfc6238">time-based one-time passwords</a>, the app’s ability to import your own key(s), and a PAM that they maintain, all of which are <a href="http://code.google.com/p/google-authenticator/source/browse">OSS</a>.</p>
+
+  </div>
+
+  <div class="post-meta">
+    
+    <time class="post-date dt-published" datetime="2012-07-16T00:00:00-07:00" itemprop="datePublished">July 16, 2012</time>
+  </div>
+
+  
+
+</article>
+
+
+    
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://twitter.com/troyd">
+            I'm @troyd on Twitter
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="/feed">
+            RSS
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+    
+
+
+
+
+  <nav class="site-navigation" role="navigation">
+    <ul>
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+    
+    
+      <li >
+        
+          <a href="https://seattleapproves.org/">
+            Seattle Approves
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://simpleoptout.com/">
+            Simple Opt Out
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="https://tacoapp.com/">
+            Taco
+          </a>
+        
+      </li>
+    
+      <li >
+        
+          <a href="http://sawsafely.org/">
+            Saw Safely
+          </a>
+        
+      </li>
+    
+    </ul>
+  </nav>
+
+
+
+    
+
+  </body>
+</html>
