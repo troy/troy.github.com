@@ -33,6 +33,8 @@ plugins:
   - jekyll-seo-tag
 
 destination: docs/
+keep_files: 
+  - CNAME
 
 # Exclude from processing.
 # The following items will not be processed, by default.
