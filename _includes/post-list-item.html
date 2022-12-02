@@ -3,7 +3,7 @@
     <div class="post-link__heading">
       {% unless post.title == "" %}
           <h1 class="post-link__title">      
-            {{ post.title }}
+            {{ post.title }}<span class="hover-arrow"> &#187;</span>
           </h1>
       {% else %}
         {% include post-excerpt.html %}

@@ -29,7 +29,11 @@ layout: default
       Page {{ paginator.page }}
     {% else %}
       {% comment %} Troy: changed from Contents {% endcomment %}
-      Selected Posts
+      {% if page.highlight_posts %}
+        Selected Posts
+      {% else %}
+        All Posts
+      {% endif %}
     {% endif %}
   </h1>
 
@@ -62,10 +66,26 @@ layout: default
   {% else %}
 
     <ul class="post-list">
-      {% assign highlighted_posts = site.posts | where: "highlight", true %}
-      {% for post in highlighted_posts %}
+      {% if page.highlight_posts %}
+        {% assign visible_posts = site.posts | where: "highlight", true %}
+      {% else %}
+        {% assign visible_posts = site.posts %}
+      {% endif %}
+      {% for post in visible_posts %}
         {% include post-list-item.html %}
       {% endfor %}
+
+      {% if page.highlight_posts %}
+        <li>
+          <a href="archives/" class="post-link">
+            <div class="post-link__heading all-posts-heading">
+              <h1 class="post-link__title all-posts-link">
+                 All Posts &#187;
+              </h1>
+            </div>
+          </a>
+        </li>
+      {% endif %}
     </ul>
   
   {% endif %}

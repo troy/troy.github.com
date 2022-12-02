@@ -320,19 +320,31 @@ figcaption { font-size: .875em; font-style: italic; text-align: center; margin-b
 
 body { background: #5e5c05; background: #268bd2; }
 
-.home { max-width: 36em; color: white; }
+.home { max-width: 36em; color: white; padding-bottom: 1.5em; }
 
 .home h1 { font-size: 1.35em; }
 
-.home h1.content-title { margin-top: initial; margin-bottom: initial; letter-spacing: 0.05em; color: #ddd; font-variant: all-small-caps; }
+.home h1.content-title { margin-top: initial; margin-bottom: initial; letter-spacing: 0.06em; color: #ddd; font-variant: all-small-caps; }
 
 .home h1.divided::after { background: none; height: initial; width: initial; display: initial; }
 
 .home .post-list h1 { color: white; }
 
+.post-list:hover .post-link, .post-list:focus-within .post-link { opacity: initial; }
+
 .home .post-list .post-link__heading { margin-right: 2em; }
 
+.home .post-list .post-link__title .hover-arrow { display: none; }
+
+.home .post-list .post-link:hover .hover-arrow { display: inline; }
+
+.home .post-list .post-link:hover h1 { text-decoration: underline; text-decoration-style: dashed; text-underline-offset: 16%; }
+
 .home .post-list .post-date { color: #ddd; margin-top: 0.35em; text-transform: initial; }
+
+.home .post-list .post-link__heading.all-posts-heading { width: 100%; }
+
+.home .post-list .post-link__title.all-posts-link { text-align: center; font-size: 1.02em; letter-spacing: 0.07em; font-variant: all-small-caps; margin-bottom: 0; }
 
 .post p { margin-top: 22px; text-indent: initial; line-height: initial; text-align: initial; }
 
@@ -343,6 +355,8 @@ body { background: #5e5c05; background: #268bd2; }
 .post > * { max-width: 49rem; }
 
 .site-navigation a { color: white; padding-left: 1em; padding-right: 1em; font-variant: none; letter-spacing: 0.06em; padding-bottom: 1em; }
+
+.site-navigation a:hover { text-decoration: underline; text-decoration-style: dashed; text-underline-offset: 23%; }
 
 .site-masthead h1 { color: white; margin-top: 0.5em; }
 

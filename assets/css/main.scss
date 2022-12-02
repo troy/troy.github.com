@@ -32,6 +32,7 @@ body {
 .home {
   max-width: 36em;
   color: white;
+  padding-bottom: 1.5em;
 }
 
 .home h1 {
@@ -40,7 +41,7 @@ body {
 .home h1.content-title {
   margin-top: initial;
   margin-bottom: initial;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: #ddd;
   font-variant: all-small-caps;
 }
@@ -53,15 +54,48 @@ body {
 .home .post-list h1 {
   color: white;
 }
+.post-list {
+  &:hover,
+  &:focus-within {
+    .post-link {
+      opacity: initial;
+    }
+  }
+}
 .home .post-list .post-link__heading {
   margin-right: 2em;
   //font-family: 'PT Sans', sans-serif;
   //font-size: 0.8em;
 }
+.home .post-list .post-link__title .hover-arrow {
+  display: none;
+}
+.home .post-list .post-link {
+  &:hover { 
+    .hover-arrow {
+      display: inline;
+    }
+    h1 {
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      text-underline-offset: 16%;
+    }
+  }
+}
 .home .post-list .post-date {
   color: #ddd;
   margin-top: 0.35em;
   text-transform: initial;
+}
+.home .post-list .post-link__heading.all-posts-heading {
+  width: 100%;
+}
+.home .post-list .post-link__title.all-posts-link {
+  text-align: center;
+  font-size: 1.02em;
+  letter-spacing: 0.07em;
+  font-variant: all-small-caps;
+  margin-bottom: 0;
 }
 
 .post p {
@@ -88,6 +122,11 @@ body {
   font-variant: none;
   letter-spacing: 0.06em;
   padding-bottom: 1em;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 23%;
+  }
 }
 .site-masthead h1 {
   color: white;
