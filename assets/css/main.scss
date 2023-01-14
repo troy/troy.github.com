@@ -117,8 +117,8 @@ body {
 .site-navigation a {
   color: white;
   //font-family: 'PT Sans', sans-serif;
-  padding-left: 0.85em;
-  padding-right: 0.85em;
+  padding-left: 1em;
+  padding-right: 1em;
   font-variant: none;
   letter-spacing: 0.06em;
   padding-bottom: 1em;
@@ -126,6 +126,11 @@ body {
     text-decoration: underline;
     text-decoration-style: dashed;
     text-underline-offset: 23%;
+  }
+  @media screen and (max-width: 428px) {
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+    letter-spacing: 0.05em;
   }
 }
 .site-masthead h1 {
