@@ -300,8 +300,8 @@ code.highlighter-rouge {
   font-style: normal;
   font-weight: 400;
   font-display: auto;
-  src: url("http://localhost:4000/assets/fonts/eb-garamond-v9-latin-regular.eot"); /* IE9 Compat Modes */
-  src: local("EB Garamond Regular"), local("EBGaramond-Regular"), url("http://localhost:4000/assets/fonts/eb-garamond-v9-latin-regular.eot?#iefix") format("embedded-opentype"), url("http://localhost:4000/assets/fonts/eb-garamond-v9-latin-regular.woff2") format("woff2"), url("http://localhost:4000/assets/fonts/eb-garamond-v9-latin-regular.woff") format("woff"), url("http://localhost:4000/assets/fonts/eb-garamond-v9-latin-regular.ttf") format("truetype"), url("http://localhost:4000/assets/fonts/eb-garamond-v9-latin-regular.svg#EBGaramond") format("svg"); /* Legacy iOS */
+  src: url("https://troy.yort.com/assets/fonts/eb-garamond-v9-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local("EB Garamond Regular"), local("EBGaramond-Regular"), url("https://troy.yort.com/assets/fonts/eb-garamond-v9-latin-regular.eot?#iefix") format("embedded-opentype"), url("https://troy.yort.com/assets/fonts/eb-garamond-v9-latin-regular.woff2") format("woff2"), url("https://troy.yort.com/assets/fonts/eb-garamond-v9-latin-regular.woff") format("woff"), url("https://troy.yort.com/assets/fonts/eb-garamond-v9-latin-regular.ttf") format("truetype"), url("https://troy.yort.com/assets/fonts/eb-garamond-v9-latin-regular.svg#EBGaramond") format("svg"); /* Legacy iOS */
 }
 body {
   background: #fede00;
@@ -394,7 +394,7 @@ hr {
   width: 152px;
   height: 12px;
   margin: 0.5em auto 0;
-  background: url(http://localhost:4000/assets/images/divider.svg) no-repeat top center;
+  background: url(https://troy.yort.com/assets/images/divider.svg) no-repeat top center;
   margin: 4em 0;
 }
 
@@ -424,7 +424,7 @@ figcaption {
   width: 152px;
   height: 12px;
   margin: 0.5em auto 0;
-  background: url(http://localhost:4000/assets/images/divider.svg) no-repeat top center;
+  background: url(https://troy.yort.com/assets/images/divider.svg) no-repeat top center;
 }
 
 .home {
@@ -706,7 +706,7 @@ figcaption {
   width: 152px;
   height: 12px;
   margin: 0.5em auto 0;
-  background: url(http://localhost:4000/assets/images/divider.svg) no-repeat top center;
+  background: url(https://troy.yort.com/assets/images/divider.svg) no-repeat top center;
   margin: 4em auto;
 }
 
